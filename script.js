@@ -1,4 +1,4 @@
-const ARI_URL = 'https://spaceweather.kasa.go.kr/api/kindex';
+const ARI_URL = 'https://spaceweather-proxy.ssb050627.workers.dev/';
 
 fetch(ARI_URL)
   .then((response) => response.json())
@@ -10,12 +10,13 @@ fetch(ARI_URL)
     const maxP = kindex.Max24P;
     const maxK = kindex.Max24K;
 
-    console.log(kk);
+    console.log(time);
     console.log(kp);
     console.log(kk);
     console.log(maxP);
     console.log(maxK);
-  });
-.catch(error => {console.error("데이터 요청 오류:", error);
+  })
 
-});
+  .catch((error) => {
+    console.error('데이터 요청 오류:', error);
+  });
